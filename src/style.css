@@ -13,6 +13,8 @@ header {
     top: 0px;
     left: 0px;
     right: 0px;
+    z-index: 2;
+    max-height: 100px;
 }
 .buttons {
     background-color: black;
@@ -22,27 +24,74 @@ header {
     border: none;
 }
 .selected {
-    color: red;
+    color: gray;
 }
 #pageSelector {
     text-align: center;
 }
 #content {
     width: 75%;
-    height: 800px;
-    background-color: violet;
-    margin: auto;
+    min-height: 100px;
+    max-height: min-content;
+    background-color: rgba(30, 30, 30, 0.8);
+    margin: 100px auto auto auto;
+    position: relative;
+    z-index: 1;
+    /*display: flex;
+    flex-direction: column;
+    align-items: center; */
+    padding: 20px;
 }
 .menu {
     display: grid;
     grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "pep basil"
+                        "bbq loaded"
+                        "meat marg";
     gap: 5px;
+}
+.pep {
+    grid-area: 'pep';
+    max-height: 200px;
+    max-width: 35%;
+}
+.basil {
+    grid-area: 'basil';
+    max-height: 200px;
+    max-width: 35%;
+}
+.bbq {
+    grid-area: 'bbq';
+    max-height: 200px;
+    max-width: 35%;
+}
+.loaded {
+    grid-area: 'loaded';
+    max-height: 200px;
+    max-width: 35%;
+}
+.meat {
+    grid-area: 'meat';
+    max-height: 200px;
+    max-width: 35%;
+}
+.marg {
+    grid-area: 'marg';
+    max-height: 200px;
+    max-width: 35%;
 }
 .about {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    color: white;
 }
 .contact {
     display: flex;
     flex-direction: column;
+    color: white;
+    align-items: center;
+    text-align: center;
+    
 }
